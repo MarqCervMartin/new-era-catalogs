@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { useState } from 'react';
 import Link from 'next/link';
 
@@ -9,7 +9,7 @@ export default function Menu() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const menuVariants = {
+  const menuVariants: Variants = {
     closed: {
       x: '-100%',
       transition: {
@@ -19,7 +19,7 @@ export default function Menu() {
       },
     },
     open: {
-      x: 0,
+      x: '0%',
       transition: {
         type: 'spring',
         stiffness: 400,
@@ -28,7 +28,7 @@ export default function Menu() {
     },
   };
 
-  const overlayVariants = {
+  const overlayVariants: Variants = {
     closed: { opacity: 0 },
     open: { opacity: 1 },
   };
